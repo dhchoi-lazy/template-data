@@ -1,1 +1,30 @@
+crawler:
+  url_extractor:
+    sources:
+      source_name:
+        output_dir: "data/raw/source_name"
+        base_url: ""
+        targets:
+          - xpath: ""
+            url: ""
+            params:
+              cur_page_num: 1
+              page_per_num: 10000
+          - xpath: ""
+            url: ""
+            params:
+              cur_page_num: 1
+              page_per_num: 10000
+          - xpath: ""
+            url: ""
 
+  html_crawler:
+    sources:
+      source_name:
+        base_url: ""
+        output_dir: "data/raw html"
+        targets:
+          - input_file: "data/raw/source_name/urls/source_name_urls.json"
+            xpath: ""
+            file_key: "exmId"
+            resumable: true
